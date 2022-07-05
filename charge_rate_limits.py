@@ -5,4 +5,4 @@ def charge_rate_is_ok(charge_rate):
     if charge_rate < CHARGE_RATE_MIN or charge_rate > CHARGE_RATE_MAX:
         print('Charge rate is out of range!')
         return False
-    else:   return True
+    return True
