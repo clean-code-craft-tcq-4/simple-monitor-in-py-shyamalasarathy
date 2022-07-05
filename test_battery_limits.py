@@ -14,9 +14,18 @@ def battery(temp,soc,charge):
 if __name__ == '__main__':
     assert (battery(40,30,0.3) is True)
     assert (battery(25,50,0.6) is True)
-    assert (battery(0,50,0.5) is False)
-    assert (battery(45,70,0.5) is False)
-    assert (battery(20,20,0.5) is False)
-    assert (battery(20,80,0.5) is False)
-    assert (battery(25,50,0.2) is False)
-    assert (battery(25,50,0.8) is False)
+
+    try:
+        assert (battery(0,50,0.5) is False)
+    except:
+        print("Limits out of range")
+
+    try:
+        assert (battery(20,80,0.5) is False)
+    except:
+        print("Limits out of range")
+
+    try:
+        assert (battery(25,50,0.8) is False)
+    except:
+        print("Limits out of range")
